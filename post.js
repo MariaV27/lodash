@@ -1,15 +1,14 @@
-var _= require('lodash');
+var _ = require('lodash');
 var request = require('request-promise');
 
 request("http://jsonplaceholder.typicode.com/posts")
-  .then(function(response){
-    var posts = JSON.parse(response);
+    .then(function(response){
+        var posts = JSON.parse(response);
 
-    //loop over all posts and grab only the ones that begin with 'dolor'
-    var importantPosts = .filter(posts, function(post){
-      return _.startWith(post.tile, "dolor");
-    })    
+        var importantPosts = _.filter(posts, function(post){
+            return _.startsWith(post.title, "dolor");
+        })
 
-    console.log(importantPosts);
-    console.log(importantPosts.length);
-  })
+        console.log(importantPosts);
+        console.log(importantPosts.length);
+    });
