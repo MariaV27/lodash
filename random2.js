@@ -9,7 +9,7 @@ var _ = require("lodash");
 var randomArray = [];
 
 _.times(100, function(){
-    var random = (_.random(100);
+    var random = _.random(100);
 
     if(randomArray.length == 0) {
       randomArray.push(random);

@@ -10,18 +10,16 @@ var numberCount = 100;
 var randomArray = [];
 var steps = 0;
 
-_.times(100, function(){
-    var random = _.random(100);
+_.times(numberCount function(){
+    var random = _.random(numberCount);
 
-    if(randomArray.length == 0) {
-      randomArray.push(random);
-    } else{
-      while(tempRandomNumbers.indexOf(random) != -1){
-        random = _.random(100);
-      }
-      randomArray.push(random);
+    while(_.includes(randomArray, random)){
+      random = _.random(numberCount);
     }
- })
+
+    randomArray.push(random);
+})
+
 
 console.log(randomArray);
 console.log(randomArray.length);
